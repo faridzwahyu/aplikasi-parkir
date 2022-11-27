@@ -1,0 +1,30 @@
+<div class="fw-normal">
+    <%- include('./layouts/header') %> <%- include('./layouts/navbar') %>
+    <div class="container">
+        <form class="d-flex mb-3" method="post" action="/">
+            <label class="form-label fw-bold fs-3 me-5">Nomor Kendaraan</label>
+            <input type="text" class="form-control fs-1" name="nomor" />
+            <button type="submit" class="btn btn-success ms-3 fs-3 px-5">
+                Parkir
+            </button>
+        </form>
+        <table class="table table-bordered table-hover">
+            <thead class="bg-light">
+                <tr>
+                    <th>No.</th>
+                    <th>Plat Nomor</th>
+                    <th>Masuk</th>
+                </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+                <% let i = 1; %> <% data.forEach((parkir) => { %>
+                <tr>
+                    <td><%= i++ %></td>
+                    <td><%= parkir.nomor %></td>
+                    <td><%= parkir.masuk %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
